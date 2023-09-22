@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetSMeet</title>
+    <link href="newevent.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">LetSMeet<span>.</span></div>
+        <a href='../../main.html' class="back" >
+            <svg width="47" height="24" viewBox="0 0 47 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M46.1514 13.0607C46.7372 12.4749 46.7372 11.5251 46.1514 10.9393L36.6054 1.3934C36.0196 0.807611 35.0699 0.807611 34.4841 1.3934C33.8983 1.97919 33.8983 2.92893 34.4841 3.51472L42.9694 12L34.4841 20.4853C33.8983 21.0711 33.8983 22.0208 34.4841 22.6066C35.0699 23.1924 36.0196 23.1924 36.6054 22.6066L46.1514 13.0607ZM0.909271 13.5H45.0907V10.5H0.909271V13.5Z" fill="black"/>
+                </svg>     
+            </a>
+
+    </header>
+    <h1>SE CONNECTER</h1>
+    <main class="eventForm">
+        <div class="neweventContainer">
+            <h2>QUOI</h2>
+            <input class='textInput' type="text" placeholder="Entrez le nom de l'événement"/>
+            <input class='textInput' type="text" placeholder="Description "/>
+            <div class="addimg">
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="17.5" cy="17.5" r="17.5" fill="#87D271"/>
+                    <path d="M25 18.5714H18.5714V25H16.4286V18.5714H10V16.4286H16.4286V10H18.5714V16.4286H25V18.5714Z" fill="white"/>
+                </svg>
+                <p>Ajouter une image</p>
+    
+            </div>
+            <h2>QUI</h2>
+            <input class='textInput' type="text" placeholder="example@email.com"/>
+            <h2>QUAND</h2>
+            <div class="duration">
+                <p class="childA colored" id="child4">30 min</p>
+                <p class="childA" id="child5">60 min</p>
+                <p class="childA" id="child6">-- min</p>
+            </div>
+            <div class="date">
+                <p class="childB colored" id="child1">2 prochains jours</p>
+                <p class="childB" id="child2">Semaine prochaine</p>
+                <p class="childB" id="child3">Date personalisée</p>
+            </div>
+            <h2>QUAND</h2>
+            <input class='textInput' type="text" placeholder="Saisir un lieu"/>
+
+
+                                
+            <button class="submitbtn">PLANIFIER</button>
+        </div>
+
+    </main>
+
+
+    <script>
+        const childrenA = document.querySelectorAll('.childA');
+        const childrenB = document.querySelectorAll('.childB');
+
+        childrenA.forEach(child => {
+            child.addEventListener('click', () => {
+                childrenA.forEach(c => c.classList.remove('colored'));
+                child.classList.add('colored');
+            });
+        });
+        
+        childrenB.forEach(child => {
+            child.addEventListener('click', () => {
+                childrenB.forEach(c => c.classList.remove('colored'));
+                child.classList.add('colored');
+            });
+        });
+
+    </script>
+</body>
+</html>
