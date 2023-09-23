@@ -27,14 +27,49 @@
             </svg>
     
         </div>
-        <a href='../../main.html' class="back" >
-            <svg width="47" height="24" viewBox="0 0 47 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M46.1514 13.0607C46.7372 12.4749 46.7372 11.5251 46.1514 10.9393L36.6054 1.3934C36.0196 0.807611 35.0699 0.807611 34.4841 1.3934C33.8983 1.97919 33.8983 2.92893 34.4841 3.51472L42.9694 12L34.4841 20.4853C33.8983 21.0711 33.8983 22.0208 34.4841 22.6066C35.0699 23.1924 36.0196 23.1924 36.6054 22.6066L46.1514 13.0607ZM0.909271 13.5H45.0907V10.5H0.909271V13.5Z" fill="black"/>
-                </svg>     
-            </a>
+        <div  class="menuburger">
+            <button onclick="setModal()">
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bot"></span>
+            </button>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="../../index.html">DÉCOUVRIR DES ÉVÉNEMENTS</a></li>
+                <li><a href="../login/login.html">SE CONNECTER / S'INSCRIRE</a></li>
+                <li><a href="../profile/profile.html">MON PROFIL</a></li>
+                <li><a href="../newevent/newevent.html">CRÉER UN ÉVÉNEMENT</a></li>
+
+
+            </ul>
+
+        </nav>
+
+    
 
                 
     </header>
+    <dialog id="modal" close>
+        <header>
+            <div class="logo">LetSMeet<span>.</span></div>
+            <button id="close-dialog-button" onclick="closeModal()">X</button>
+        </header>
+
+        <nav class="menu_mobile">
+            <ul>
+                <li><a href="../../index.html" >DÉCOUVRIR DES ÉVÉNEMENTS</a></li>
+                <li><a href="../login/login.html">SE CONNECTER / S'INSCRIRE</a></li>
+                <li><a href="../profile/profile.html">MON PROFIL</a></li>
+                <li><a href="../newevent/newevent.html">CRÉER UN ÉVÉNEMENT</a></li>
+
+
+            </ul>
+        </nav>
+
+    </dialog>
+
+
     <main>
         <section>
             <h2>Jean FRANCOIS</h2>
@@ -54,12 +89,21 @@
         <span class="separator"></span>
         <section>
             <h2>Accès et Mot de Passe</h2>
-            <input class='textInput' type="text" placeholder="example@email.com"/>
-            <input class='textInput' type="text" placeholder="Ancien mot de passe"/>
-            <input class='textInput' type="text" placeholder="Nouveau mot de passe"/>
-            <input class='textInput' type="text" placeholder="Confirmer mot de passe"/>
+
+            <label for="email">Changer d'email</label>
+            <input id='email' class='textInput' type="text" placeholder="example@email.com" aria-label="Saisir votre nouvelle adresse mail"/>
+
+            <label for="mdp">Ancien mot de passe</label>
+            <input id='mdp'class='textInput' type="text" placeholder="Ancien mot de passe" aria-label="Saisir votre ancien mot de Passe"/>
+
+            <label for="newmdp">Nouveau mot de passe</label>
+            <input id='newmdp' class='textInput' type="text" placeholder="Nouveau mot de passe" aria-label="Saisir votre nouveau mot de Passe"/>
+
+            <label for="newmdp2">Confirmer le mot de passe</label>
+            <input id="newmdp2" class='textInput' type="text" placeholder="Confirmer le mot de passe" aria-label="Confirmer votre nouveau mot de Passe"/>
+
             <div class="notif">
-                <input class='checkbox' type="checkbox"/>
+                <input class='checkbox' type="checkbox" aria-label="Recevoir les notifications"/>
                 <p>Recevoir les notifications</p>
             </div>  
 
@@ -67,5 +111,16 @@
         </section>
 
     </main>
+    <script>
+        const dialog = document.getElementById('modal')
+        function setModal() {
+          dialog.showModal()
+        }
+        function closeModal(){
+            dialog.close()
+        }
+    
+
+    </script>
 </body>
 </html>

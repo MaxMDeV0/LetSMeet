@@ -11,24 +11,61 @@
 <body>
     <header>
         <div class="logo">LetSMeet<span>.</span></div>
-        <a href='../../main.html' class="back" >
-            <svg width="47" height="24" viewBox="0 0 47 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M46.1514 13.0607C46.7372 12.4749 46.7372 11.5251 46.1514 10.9393L36.6054 1.3934C36.0196 0.807611 35.0699 0.807611 34.4841 1.3934C33.8983 1.97919 33.8983 2.92893 34.4841 3.51472L42.9694 12L34.4841 20.4853C33.8983 21.0711 33.8983 22.0208 34.4841 22.6066C35.0699 23.1924 36.0196 23.1924 36.6054 22.6066L46.1514 13.0607ZM0.909271 13.5H45.0907V10.5H0.909271V13.5Z" fill="black"/>
-                </svg>     
-            </a>
+        <div class="menuburger" >
+            <button onclick="setModal()" aria-label="Ouvre le menu de navigation du site">
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bot"></span>
+    
+            </button>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="../../index.html">DÉCOUVRIR DES ÉVÉNEMENTS</a></li>
+                <li><a href="../login/login.html">SE CONNECTER / S'INSCRIRE</a></li>
+                <li><a href="../profile/profile.html">MON PROFIL</a></li>
+                <li><a href="../newevent/newevent.html">CRÉER UN ÉVÉNEMENT</a></li>
 
+
+            </ul>
+
+        </nav>
+
+    
     </header>
-    <h1>SE CONNECTER</h1>
+
+    <dialog id="modal" close>
+        <header>
+            <div class="logo">LetSMeet<span>.</span></div>
+            <button id="close-dialog-button" onclick="closeModal()" aria-label="Ferme le menu de navigation du site">X</button>
+        </header>
+
+        <nav class="menu_mobile">
+            <ul>
+                <li><a href="../../index.html">DÉCOUVRIR DES ÉVÉNEMENTS</a></li>
+                <li><a href="../login/login.html">SE CONNECTER / S'INSCRIRE</a></li>
+                <li><a href="../profile/profile.html">MON PROFIL</a></li>
+                <li><a href="../newevent/newevent.html">CRÉER UN ÉVÉNEMENT</a></li>
+
+
+            </ul>
+        </nav>
+
+    </dialog>
+
+    <h1><p class="titre1">SE CONNECTER</p><p class="titre2">S'INSCRIRE</p></h1>
     <main class="loginForm">
-        <div class="formContainer">
-            <input class='textInput' type="text" placeholder="example@email.com"/>
-            <input class='textInput' type="text" placeholder="Mot de passe"/>
+        <div class="loginContainer">
+            <label for="loginemail">Email</label>
+            <input id="loginemail" class='textInput' type="text" placeholder="example@email.com"/>
+            <label for="loginmdp">Mot de passe</label>
+            <input id="loginmdp" class='textInput' type="text" placeholder="Mot de passe"/>
             <div class="keeplog">
-                <input class='checkbox' type="checkbox"/>
+                <input class='checkbox' type="checkbox" aria-label="Cliquer pour rester connecté"/>
                 <p>Se souvenir de moi</p>
             </div>  
-            <p class="forgetpswrd">Mot de passe oublié ?</p>
-            <button class="loginbtn">SE CONNECTER</button>
+            <button class="forgetpswrd">Mot de passe oublié ?</button>
+            <button class="loginbtn" aria-label="Envoi le formulaire de connexion">SE CONNECTER</button>
 
             <div class="or">
                 <span class="line"></span>
@@ -37,7 +74,7 @@
 
             </div>
             <div class="signin">Je suis nouveau/nouvelle chez LetSMeet.
-                <strong>Créez votre compte.</strong></div>
+                <button onclick="myFunction()" aria-label="Si Vous n'êtes pas encore inscrit cliquez ici pour vous inscrire">Créez votre compte.</button></div>
           
             <div class="or">
                 <span class="line"></span>
@@ -60,9 +97,85 @@
                                         
             </div>
         </div>
+        <div class="signupContainer">
+
+            <label for="nom">Nom</label>
+            <input id='nom' class='textInput' type="text" placeholder="Dupont"/>
+
+            <label for="prenom">Prénom</label>
+            <input id='prenom' class='textInput' type="text" placeholder="Antoine"/>
+
+            <label for="localisation">Localisation</label>
+            <input id="localisation" class='textInput' type="text" placeholder="Paris"/>
+
+            <label for="email">Email</label>
+            <input id="email" class='textInput' type="text" placeholder="example@email.com"/>
+
+            <label for="mdp">Mot de passe</label>
+            <input id="mdp" class='textInput' type="text" placeholder="Mot de passe"/>
+
+            <label for="mdp2">Confirmer votre mot de passe</label>
+            <input id="mdp2" class='textInput' type="text" placeholder="Confirmer mot de passe"/>
+
+            <label for="hobbies">Centre d'intêret</label>
+            <input id="hobbies" class='textInput' type="text" placeholder="footbal, lecture, guitare"/>
+
+            <label for="bio">Description</label>
+            <input id="bio" class='textInput' type="text" placeholder="Description"/>
+
+
+            <div class="keeplog">
+                <input class='checkbox' type="checkbox"/>
+                <p>Se souvenir de moi</p>
+            </div>  
+            <button class="loginbtn" aria-label="Envoi les données du formulaire d'inscription">S'INSCRIRE</button>
+
+            <div class="or">
+                <span class="line"></span>
+                <p>Ou</p>
+                <span class="line"></span>
+
+            </div>
+            <div class="signin">Déjà inscrit.
+                <button onclick="myFunction()" aria-label="Si Vous êtes déjà inscrit cliquez ici pour vous connecter">Je me connecte.</button></div>
+        </div>
+
 
     </main>
+    <script>
+        const login = document.getElementsByClassName('loginContainer')[0].style;
+        const signup = document.getElementsByClassName('signupContainer')[0].style;
+        const titre1 = document.getElementsByClassName('titre1')[0].style;
+        const titre2 = document.getElementsByClassName('titre2')[0].style;
+        let select = false
 
+        const dialog = document.getElementById('modal')
+        function setModal() {
+          dialog.showModal()
+        }
+        function closeModal(){
+            dialog.close()
+        }
     
+        const myFunction = ()=>{
+            if(select){
+                login.display = 'none'
+                signup.display = 'flex'
+                titre1.display = 'none'
+                titre2.display = 'inline'
+                select = !select
+            }else{
+                login.display = 'flex'
+                signup.display = 'none'
+                titre1.display = 'inline'
+                titre2.display = 'none'
+            
+                select = !select
+            }
+        }
+        
+
+    </script>
+
 </body>
 </html>
