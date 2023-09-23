@@ -24,12 +24,16 @@ header{
 .logo span{
     color: black;
 }
-.menuburger{
+.menuburger button{
     flex: 1;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
+    background-color: #87D271;
+    border: none;
+    margin-right: 30px;
 
 }
 .menuburger span{
@@ -77,6 +81,7 @@ img{
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+    max-width: 1000px;
 }
 h3{
     width: 80%;
@@ -84,6 +89,12 @@ h3{
 .description{
     width: 80%;
 }
+.back{
+    height: 50px;
+    margin-left: 30px;
+}
+
+
 #modal {
     width: 100%;
     height: 100%;
@@ -106,11 +117,11 @@ h3{
     color: white;
     background-color: #87D271;
 }
-ul{
+.menu_mobile ul{
     padding: 0;
     margin-top: 50px;
 }
-li{
+.menu_mobile li{
     list-style-type: none;
     text-align: center;
     font-size: 1.5rem;
@@ -124,4 +135,56 @@ li{
 a{
     color: #fff;
     text-decoration: none;
+}
+.menu {
+    display: none;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+
+@media screen and (min-width: 1000px) {
+    .menuburger{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .logo{
+        flex: 1;
+    }
+    .menu ul{
+        display: flex;
+        margin-right: 40px;
+    }
+    .menu li{
+        list-style-type: none;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+        height: 90px;
+        align-items: center;
+        justify-content: center;
+        margin-left: 30px;
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+        line-height: 90px;
+    }
+    section{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .event{
+        align-self: center;
+    }
+    h1{
+        text-align: center;
+    }
 }
